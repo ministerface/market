@@ -11,6 +11,7 @@ var templateCache = require('gulp-angular-templatecache');
 var uglify        = require('gulp-uglify');
 var cleanCSS      = require('gulp-clean-css');
 var merge         = require('merge-stream');
+var historyApiFallback = require('connect-history-api-fallback');
 
 // Where our files are located
 var sassFiles = "src/sass/main.scss";
@@ -86,7 +87,10 @@ gulp.task('build', ['sass', 'html', 'browserify'], function() {
 gulp.task('default', ['sass', 'html', 'browserify'], function() {
 
   browserSync.init(['./build/**/**.**'], {
-    server: "./build",
+    server: {
+      baseDir: "./build",
+      middleware: [ historyApiFallback() ]
+    },
     port: 4000,
     notify: false,
     ui: {

@@ -8,8 +8,8 @@ function HomeConfig($stateProvider) {
     controllerAs: '$ctrl',
     templateUrl: 'home/home.html',
     title: 'Home'
-  });
-
+  })
+  
 };
 
 export default HomeConfig;

@@ -3,7 +3,7 @@ function ArticleConfig($stateProvider) {
 
   $stateProvider
   .state('app.article', {
-    url: '/article/:slug',
+    url: '/article/',
     controller: 'ArticleCtrl',
     controllerAs: '$ctrl',
     templateUrl: 'article/article.html',
