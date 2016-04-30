@@ -13,3 +13,8 @@
 
 // Include Conduit SASS files (which also includes Bootstrap 4)
 @import '../../node_modules/conduit-sass/scss/conduit.scss';
+
+.home-page .sidebar {
+  background: #FFFFFF;
+  border:1px solid #E6E6E6;
+}

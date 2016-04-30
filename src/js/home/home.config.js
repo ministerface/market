@@ -7,7 +7,15 @@ function HomeConfig($stateProvider) {
     controller: 'HomeCtrl',
     controllerAs: '$ctrl',
     templateUrl: 'home/home.html',
-    title: 'Home'
+    title: 'Панель управления',
+    resolve: {
+          userData: function(ApiService, store) {
+            return ApiService.getUserData(store.get('user_id')).then(
+                  (userData) => userData
+                  
+            );
+          }
+    }
   })
   
 };

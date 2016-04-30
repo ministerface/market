@@ -1,16 +1,23 @@
 class HomeCtrl {
-  constructor(AppConstants, OauthService, store) {
+  constructor(AppConstants,store, ApiService, userData) {
     'ngInject';
 
+    this._ApiService = ApiService;
     this.appName = AppConstants.appName;
-    this._OauthService = OauthService;
-    console.log(store.get('access_token'));
+    this.userId = store.get('user_id');
+    this.dataUser = userData;
+    console.log(this.dataUser);
 
   }
 
-  getAuth () {
-    this._OauthService.getAuth();
-  }
+
+
+
+
+
+
+
+
 
 }
 

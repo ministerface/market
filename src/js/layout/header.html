@@ -6,22 +6,13 @@
       ng-bind="::$ctrl.appName | lowercase">
     </a>
 
-    <!-- Show this for logged out users -->
     <ul class="nav navbar-nav pull-xs-right">
 
       <li class="nav-item">
         <a class="nav-link"
           ui-sref-active="active"
           ui-sref="app.home">
-          Home
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link"
-          ui-sref-active="active"
-          ui-sref="app.article">
-          Article
+          Главная
         </a>
       </li>
 
@@ -29,9 +20,21 @@
         <a class="nav-link"
           ui-sref-active="active"
           ui-sref="app.profile">
-          Profile
+          Настройки
         </a>
       </li>
+
+      <li ng-hide="$ctrl.autorised" class="nav-item sing-in">
+        <a class="nav-link"
+           ng-click="$ctrl.getAuth()">
+          Вход
+        </a>
+      </li>
+        <li ng-show="$ctrl.autorised" class="nav-item sing-in">
+            <a ng-click="$ctrl.logOut()" class="nav-link">
+                Выход
+            </a>
+        </li>
 
     </ul>
 
