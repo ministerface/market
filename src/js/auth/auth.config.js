@@ -4,8 +4,11 @@ function AuthConfig($stateProvider) {
   $stateProvider
   .state('app.auth', {
     url: '/auth/',
-    controller: 'AuthCtrl',
-    controllerAs: '$ctrl'
+    resolve: {
+      userData: function(ApiService,  User) {
+        User.applyToken();
+      }
+    }
   });
 
 };

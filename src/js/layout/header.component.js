@@ -1,18 +1,17 @@
 class AppHeaderCtrl {
-  constructor(AppConstants, ApiService, store) {
+  constructor(AppConstants, User) {
     'ngInject';
-    this._ApiService = ApiService;
+    this._User = User;
     this.appName = AppConstants.appName;
-      this.autorised = (store.get('access_token')) ? true : false;
   };
     
 
-    getAuth () {
-        this._ApiService.getAuth();
+    logIn () {
+        this._User.getToken();
     }
-    
+
     logOut() {
-        this._ApiService.logOut();
+      this._User.destroyToken();
     }
   
 }

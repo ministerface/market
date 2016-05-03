@@ -36,14 +36,19 @@
 
 
       <div class="col-md-3">
-        <div ng-show="$ctrl.dataUser" class="sidebar">
+        <div show-authed="true" class="sidebar">
 
           <div class="article-meta">
-            <a href=""><img ng-src="{{$ctrl.dataUser.photo_50}}"></a>
+            <a href=""><img ng-src="{{$ctrl.currentUser.data.photo_50}}"></a>
             <div class="info">
-              <a href="" class="author" ng-bind="$ctrl.dataUser.first_name+' '+$ctrl.dataUser.last_name"></a>
+              <a href="" class="author">{{::$ctrl.currentUser.data.first_name}} {{::$ctrl.currentUser.data.last_name}}</a>
+              <span class="date"></span>
             </div>
+
+
           </div>
+
+
 
         </div>
       </div>

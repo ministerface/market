@@ -24,13 +24,13 @@
         </a>
       </li>
 
-      <li ng-hide="$ctrl.autorised" class="nav-item sing-in">
+      <li show-authed="false" class="nav-item sing-in">
         <a class="nav-link"
-           ng-click="$ctrl.getAuth()">
+           ng-click="$ctrl.logIn()">
           Вход
         </a>
       </li>
-        <li ng-show="$ctrl.autorised" class="nav-item sing-in">
+        <li show-authed="true" class="nav-item sing-in">
             <a ng-click="$ctrl.logOut()" class="nav-link">
                 Выход
             </a>
