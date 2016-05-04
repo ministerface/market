@@ -1,6 +1,7 @@
 class ProfileCtrl {
-  constructor() {
+  constructor(userData) {
     'ngInject';
+    console.log(userData);
 
   }
 }

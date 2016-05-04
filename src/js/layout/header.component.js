@@ -3,6 +3,8 @@ class AppHeaderCtrl {
     'ngInject';
     this._User = User;
     this.appName = AppConstants.appName;
+
+    this.currentUser = this._User.current;
   };
     
 

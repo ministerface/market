@@ -6,7 +6,12 @@ function ProfileConfig($stateProvider) {
     url: '/profile',
     controller: 'ProfileCtrl',
     controllerAs: '$ctrl',
-    templateUrl: 'profile/profile.html'
+    templateUrl: 'profile/profile.html',
+    resolve: {
+      userData: function(User) {
+        return User.current;
+      }
+    }
   });
 
 };

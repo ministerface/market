@@ -71,9 +71,9 @@ export default class User {
             }
         );
 
-
-
     }
+
+    
 
 
 

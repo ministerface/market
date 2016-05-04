@@ -1,21 +1,11 @@
 class HomeCtrl {
-  constructor(AppConstants, User, Group) {
+  constructor() {
     'ngInject';
 
-    this.appName = AppConstants.appName;
-    this.currentUser = User.current;
     
    
   }
-
-
-
-
-
-
-
-
-
+  
 
 }
 
