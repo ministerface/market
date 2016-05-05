@@ -50,7 +50,7 @@ export default class User {
         let param = {
             user_id: user_id,
             access_token: this.current.access_token,
-            fields: 'photo_50,home_town'
+            fields: 'photo_50,home_town, verified, sex, bdate, online, domain, contacts, site, nickname, connections'
         };
 
 

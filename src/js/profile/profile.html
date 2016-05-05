@@ -13,19 +13,29 @@
           <ul class="nav nav-pills outline-active">
 
             <li class="nav-item">
-              <a class="nav-link active">
-                Настроки магазина
+              <a class="nav-link"
+                 ui-sref-active="active"
+                 ui-sref="app.profile.main">
+                Профиль
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link">
-              Настройки пприложения
+              <a class="nav-link"
+                 ui-sref-active="active"
+                 ui-sref="app.profile.setup">
+              Настройки приложения
               </a>
             </li>
 
           </ul>
         </div>
+
+        <div class="article-preview">
+          <div ui-view></div>
+
+        </div>
+
 
 
 

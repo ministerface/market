@@ -5,6 +5,8 @@ class AppHeaderCtrl {
     this.appName = AppConstants.appName;
 
     this.currentUser = this._User.current;
+
+    console.log(this.currentUser);
   };
     
 
