@@ -12,25 +12,13 @@
 
 
 // Include Conduit SASS files (which also includes Bootstrap 4)
-@import '../../node_modules/conduit-sass/scss/conduit.scss';
+//@import '../../node_modules/conduit-sass/scss/conduit.scss';
 
-.home-page .sidebar {
-  background: #FFFFFF;
-  border:1px solid #E6E6E6;
-}
+@import '../scss/bootstrap.min.scss';
+@import '../scss/components.scss';
+@import '../scss/core.scss';
+@import '../scss/icons.scss';
+@import '../scss/menu.scss';
+@import '../scss/pages.scss';
+@import '../scss/responsive.scss';
 
-.article-meta {
-  text-align: center;
-
-}
-
-.article-meta .admin_info {
-  margin-top:10px;
-  font-size:14px;
-}
-
-.article-meta .admin_info span {
-  display: block;
-  color: #B5B5B5;
-  font-size: 12px;
-}

@@ -1,4 +1,5 @@
 var gulp          = require('gulp');
+var removeHtmlComments = require('gulp-remove-html-comments');
 var notify        = require('gulp-notify');
 var source        = require('vinyl-source-stream');
 var browserify    = require('browserify');
@@ -54,6 +55,7 @@ gulp.task('sass', function() {
 gulp.task('html', function() {
   return gulp.src("src/index.html")
       .on('error', interceptErrors)
+      .pipe(removeHtmlComments())
       .pipe(gulp.dest('./build/'));
 });
 

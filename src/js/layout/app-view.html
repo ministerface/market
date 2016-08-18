@@ -1,5 +1,17 @@
-<app-header></app-header>
-
-<div ui-view></div>
-
-<app-footer></app-footer>
+<div id="wrapper" ng-class="{'right-bar-enabled': $ctrl.rightBar.rightBar}">
+    <app-topbar></app-topbar>
+    <app-side-menu></app-side-menu>
+    <div class="content-page">
+        <div class="content">
+            <div class="container">
+                <div ui-view></div>
+                <div class="article-preview"
+                     ng-show="stateIsLoading">
+                    Загрузка данных...
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+    </div>
+    <app-right-bar></app-right-bar>
+</div>

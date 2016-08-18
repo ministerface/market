@@ -19,7 +19,8 @@ export default class User {
         let response_type = this._Oauth.response_type;
         let url= this._Oauth.url+"?scope="+scope+"&client_id="+client_id+"&redirect_uri="+redirect_uri+"&response_type="+response_type;
         window.location.replace(url);
-    }
+
+    }   
 
     applyToken() {
         let hs = this._$location.hash();
@@ -34,7 +35,10 @@ export default class User {
             user_id: userID
         };
 
+      
+
         this.getUserData(this.current.user_id);
+
 
 
     }
@@ -42,8 +46,33 @@ export default class User {
     destroyToken() {
         this._store.set('currentUser', '');
         this.current = null;
-        this._$state.go('app.home');
+        this._$state.go('login');
     }
+
+
+    getData(users_id) {
+        let param = {
+            user_ids: users_id,
+            access_token: this.current.access_token,
+            fields: 'photo_50,home_town, verified, sex, bdate, online, domain, contacts, site, nickname, connections'
+        };
+        
+        let paramUrl = Object.keys(param).map(function(key) {
+            return key + '=' + param[key];
+        }).join('&');
+
+        let url = 'https://api.vk.com/method/users.get?'+paramUrl+'&callback=JSON_CALLBACK';
+
+        return this._$http.jsonp(url).then(
+            (data) => {
+                return data.data.response;
+            },
+            (err) => {
+                console.log(err);
+            }
+        );
+    }
+    
 
     getUserData (user_id) {
 

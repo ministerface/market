@@ -1,0 +1,90 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+
+        <!-- User -->
+        <div class="user-box">
+            <div class="user-img">
+                <img ng-src="{{$ctrl.currentUser.data.photo_50}}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                <div class="user-status online"><i class="zmdi zmdi-dot-circle"></i></div>
+            </div>
+            <h5><a href="index.html#">{{::$ctrl.currentUser.data.first_name}} {{::$ctrl.currentUser.data.last_name}}</a> </h5>
+            <ul class="list-inline">
+                <li>
+                    <a ui-sref="app.settings.profile"
+                       ui-sref-active="active">
+                        <i class="zmdi zmdi-settings"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a ng-click="$ctrl.logout()" class="text-custom">
+                        <i class="zmdi zmdi-power"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- End User -->
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <ul>
+                <li class="text-muted menu-title">Навигация</li>
+
+                <li>
+                    <a class="waves-effect"
+                       ui-sref-active="active"
+                       ui-sref="app.home">
+                        <i class="zmdi zmdi-view-dashboard"></i> <span> Панель управления </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="waves-effect"
+                       ui-sref-active="active"
+                       ui-sref="app.shops.list">
+                        <i class="zmdi zmdi-store"></i> <span> Магазины </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="waves-effect"
+                       ui-sref-active="active"
+                        ui-sref="app.goods">
+                        <i class="zmdi zmdi-devices"></i> <span>Мои товары</span>
+                    </a>
+
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect">
+                        <i class="zmdi zmdi-notifications-none"></i>
+                        <span class="label label-primary pull-right">7</span><span> Заказы </span> </a>
+
+                </li>
+
+
+
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-chart-donut"></i><span> Статистика </span></a>
+                </li>
+
+                <li>
+                    <a class="waves-effect"
+                       ui-sref-active="active"
+                       ui-sref="app.settings.main">
+                        <i class="zmdi zmdi-settings"></i><span> Настройки </span>
+                    </a>
+                </li>
+
+
+
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+<!-- Left Sidebar End -->

@@ -1,0 +1,33 @@
+<div class="card-box">
+    <div ng-class="{open: $ctrl.settings.showMenu}" class="dropdown pull-right">
+        <a ng-click="$ctrl.showMenus()" class="dropdown-toggle card-drop">
+            <i class="zmdi zmdi-more-vert"></i>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a>Показать всех</a></li>
+            <li><a>Только онлайн</a></li>
+            <li><a>Только друзей</a></li>
+            <li class="divider"></li>
+            <li><a >Скрыть блок</a></li>
+        </ul>
+    </div>
+
+    <h4 class="header-title m-t-0 m-b-30">Подписчики</h4>
+
+    <ul class="list-group m-b-0 user-list">
+        <li ng-repeat="follower in $ctrl.shop" class="list-group-item">
+            <a  class="user-list-item">
+                <div class="avatar">
+                    <img ng-src="{{follower.photo_50}}" alt="">
+                </div>
+                <div class="user-desc">
+                    <span class="name">{{::follower.first_name}} {{::follower.last_name}}</span>
+                    <span class="desc">{{follower.online ? 'В сети' : 'Не в сети'}}</span>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+

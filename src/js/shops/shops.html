@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-sm-4">
+        <button type="button" class="btn btn-purple btn-rounded w-md waves-effect waves-light m-b-20">Добавить магазин</button>
+    </div>
+    <div class="col-sm-8">
+        <div class="project-sort pull-right">
+            <div class="project-sort-item">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label>Показать :</label>
+                        <select class="form-control input-sm">
+                            <option>Одежда (6)</option>
+                            <option>Услуги</option>
+                            <option>Товары</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Сортировать :</label>
+                        <select class="form-control input-sm">
+                            <option>Дата</option>
+                            <option>Название</option>
+                            <option>Рейтинг</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- end col-->
+</div>
+<!-- end row -->
+
+<div class="row">
+
+    <shop-preview dir-paginate="shop in $ctrl.filteredData  | itemsPerPage: 6" shop="shop" class="animate-repeat"></shop-preview>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>
+

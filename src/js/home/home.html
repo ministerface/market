@@ -1,40 +1,269 @@
- <div class="home-page">
+<div class="row" ng-repeat="shop in $ctrl.shops">
+    <div class="col-md-4">
+        <div class="card-box task-detail">
 
 
-  <div class="container page">
-    <div class="row">
+                    <div class="media m-b-20">
+                        <div class="media-left">
+                            <a href="extras-taskdetail.html#">
+                                <img class="media-object img-circle" alt="64x64" ng-src="{{shop.data.photo_50}}" style="width: 48px; height: 48px;"> </a>
+                        </div>
 
+                        <div class="media-body">
 
+                            <h4 class="media-heading m-b-0">{{::shop.data.name}}</h4>
+                            <span class="">{{::shop.data.status}}</span>
 
-      <div class="col-md-12">
+                        </div>
+                    </div>
 
-        <div class="feed-toggle">
-          <ul class="nav nav-pills outline-active">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card-box widget-user border-blue">
+                                <div class="text-center">
+                                    <h2 class="text-custom" ng-bind="::shop.count"></h2>
+                                    <h5>Товаров</h5>
+                                </div>
+                            </div>
+                        </div>
 
-            <li class="nav-item" show-authed="true">
-              <a href="" class="nav-link active">
-                Ваши товары
-              </a>
-            </li>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card-box widget-user border-pink">
+                                <div class="text-center">
+                                    <h2 class="text-pink" ng-bind="::shop.data.members_count"></h2>
+                                    <h5>Подписчиков</h5>
+                                </div>
+                            </div>
+                        </div>
 
-            <li class="nav-item">
-              <a href="" class="nav-link">
-                Популярные товары
-              </a>
-            </li>
+                    </div>
+                     <div class="clearfix"></div>
+                    <div class="attached-files">
+                    <h5 class="font-600">Последние товары </h5>
+                    <div class="files-list">
+                        <div class="file-box">
+                            <a href="extras-taskdetail.html"><img src="images/attached-files/img-1.jpg" class="img-responsive img-thumbnail" alt="attached-img"></a>
+                            <p class="font-13 m-b-5 text-muted"><small>Кросовки</small></p>
+                        </div>
+                        <div class="file-box">
+                            <a href="extras-taskdetail.html"><img src="images/attached-files/img-2.jpg" class="img-responsive img-thumbnail" alt="attached-img"></a>
+                            <p class="font-13 m-b-5 text-muted"><small>Пальто</small></p>
+                        </div>
+                        <div class="file-box">
+                            <a href="extras-taskdetail.html"><img src="images/attached-files/img-3.png" class="img-responsive img-thumbnail" alt="attached-img"></a>
+                            <p class="font-13 m-b-5 text-muted"><small>Кепка</small></p>
+                        </div>
+                        <div class="file-box m-l-15">
+                            <div class="fileupload add-new-plus">
+                                <span><i class="zmdi-plus zmdi"></i></span>
 
-          </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         </div>
+    </div><!-- end col -->
+
+    <div class="col-md-8">
+        <div class="card-box">
+            <div class="dropdown pull-right">
+                <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                    <i class="zmdi zmdi-more-vert"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Обновить данные</a></li>
+                    <li><a href="#">Свернуть юлок</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Закрыть</a></li>
+                </ul>
+            </div>
+
+            <h4 class="header-title m-t-0 m-b-30">Заказы</h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Товар</th>
+                        <th>Заказчик</th>
+                        <th>Дата</th>
+                        <th>Статус</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Товар #1</td>
+                        <td>Семченко Вячеслав</td>
+                        <td>26/04/2016</td>
+                        <td><span class="label label-success">Новый</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Товар #2</td>
+                        <td>Семченко Вячеслав</td>
+                        <td>10/05/2016</td>
+                        <td><span class="label label-pink">Обработка</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Товар #3</td>
+                        <td>Семченко Вячеслав</td>
+                        <td>10/05/2016</td>
+                        <td><span class="label label-pink">Обработка</span></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Товар #4</td>
+                        <td>Семченко Вячеслав</td>
+                        <td>31/05/2016</td>
+                        <td><span class="label label-purple">Отправлен</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Товар #5</td>
+                        <td>Семченко Вячеслав</td>
+                        <td>31/05/2016</td>
+                        <td><span class="label label-warning">Закрыт</span></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Товар #6</td>
+                        <td>Семченко Вячеслав</td>
+                        <td>31/05/2016</td>
+                        <td><span class="label label-warning">Закрыт</span></td>
+                    </tr>
 
 
-        <div class="article-preview">
-
-
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
+    </div><!-- end col -->
 
 
+    <!--
+    <div class="col-md-4">
+        <div class="card-box">
+            <div class="dropdown pull-right">
+                <a href="extras-taskdetail.html#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                    <i class="zmdi zmdi-more-vert"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="extras-taskdetail.html#">Action</a></li>
+                    <li><a href="extras-taskdetail.html#">Another action</a></li>
+                    <li><a href="extras-taskdetail.html#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="extras-taskdetail.html#">Separated link</a></li>
+                </ul>
+            </div>
+
+            <h4 class="header-title m-t-0 m-b-30">Comments (6)</h4>
+
+            <div>
+                <div class="media m-b-10">
+                    <div class="media-left">
+                        <a href="extras-taskdetail.html#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="images/users/avatar-1.jpg"> </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Mat Helme</h4>
+                        <p class="font-13 text-muted m-b-0">
+                            <a href="extras-taskdetail.html" class="text-primary">@Michael</a>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                            ante sollicitudin commodo. Cras purus odio.
+                        </p>
+                        <a href="extras-taskdetail.html" class="text-success font-13">Reply</a>
+                    </div>
+                </div>
+                <div class="media m-b-10">
+                    <div class="media-left">
+                        <a href="extras-taskdetail.html#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="images/users/avatar-2.jpg"> </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Media heading</h4>
+                        <p class="font-13 text-muted m-b-0">
+                            <a href="extras-taskdetail.html" class="text-primary">@Michael</a>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                            ante sollicitudin commodo. Cras purus odio.
+                        </p>
+                        <a href="extras-taskdetail.html" class="text-success font-13">Reply</a>
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="extras-taskdetail.html#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="images/users/avatar-3.jpg"> </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nested media heading</h4>
+                                <p class="font-13 text-muted m-b-0">
+                                    <a href="extras-taskdetail.html" class="text-primary">@Michael</a>
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                    ante sollicitudin commodo. Cras purus odiot.
+                                </p>
+                                <a href="extras-taskdetail.html" class="text-success font-13">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media m-b-10">
+                    <div class="media-left">
+                        <a href="extras-taskdetail.html#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="images/users/avatar-1.jpg"> </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Mat Helme</h4>
+                        <p class="font-13 text-muted m-b-0">
+                            <a href="extras-taskdetail.html" class="text-primary">@Michael</a>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                            ante sollicitudin commodo. Cras purus odio.
+                        </p>
+                        <a href="extras-taskdetail.html" class="text-success font-13">Reply</a>
+                    </div>
+                </div>
+                <div class="media m-b-10">
+                    <div class="media-left">
+                        <a href="extras-taskdetail.html#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="images/users/avatar-2.jpg"> </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Media heading</h4>
+                        <p class="font-13 text-muted m-b-0">
+                            <a href="extras-taskdetail.html" class="text-primary">@Michael</a>
+                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                            ante sollicitudin commodo. Cras purus odio.
+                        </p>
+                        <a href="extras-taskdetail.html" class="text-success font-13">Reply</a>
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="extras-taskdetail.html#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="images/users/avatar-3.jpg"> </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Nested media heading</h4>
+                                <p class="font-13 text-muted m-b-0">
+                                    <a href="extras-taskdetail.html" class="text-primary">@Michael</a>
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                    ante sollicitudin commodo. Cras purus odiot.
+                                </p>
+                                <a href="extras-taskdetail.html" class="text-success font-13">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media">
+                    <div class="media-left">
+                        <a href="extras-taskdetail.html#"> <img class="media-object img-circle thumb-sm" alt="64x64" src="images/users/avatar-1.jpg"> </a>
+                    </div>
+                    <div class="media-body">
+                        <input type="text" class="form-control input-sm" placeholder="Some text value...">
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
+    -->
+
 
 </div>

@@ -1,7 +1,6 @@
 class AuthCtrl {
-  constructor($location, store) {
+  constructor() {
     'ngInject';
-
   }
   
 }

@@ -1,12 +1,8 @@
 class HomeCtrl {
-  constructor() {
+  constructor(shops) {
     'ngInject';
-
-    
-   
+    this.shops = shops;
   }
-  
-
 }
 
 export default HomeCtrl;

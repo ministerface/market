@@ -1,0 +1,9 @@
+<div class="project-members m-b-20">
+    <span class="m-r-5 font-600" >Менеджеры:</span>
+
+
+    <a target="_blank" href="//vk.com/{{::user.domain}}" ng-repeat="user in $ctrl.users" title="{{::user.first_name}}">
+        <img ng-src="{{user.photo_50}}" class="img-circle thumb-sm" alt="{{::user.first_name}}" />
+    </a>
+
+</div>

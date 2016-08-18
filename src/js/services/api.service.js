@@ -4,10 +4,9 @@ export default class ApiService {
 
         this._Oauth = AppConstants.oAuthVK;
         this._$http = $http;
+        
         this.current = null;
-
     }
-    
     
     getUserData (user_id) {
         let token = this._store.get('access_token');
@@ -20,9 +19,7 @@ export default class ApiService {
         let paramUrl = Object.keys(param).map(function(key) {
             return key + '=' + param[key];
         }).join('&');
-
-
-
+        
         let url = 'https://api.vk.com/method/users.get?'+paramUrl+'&callback=JSON_CALLBACK';
         return this._$http.jsonp(url).then(function(data){
             return data.data.response[0];
@@ -30,7 +27,6 @@ export default class ApiService {
         }, function(response){
 
         });
-
     }
 
     getUserGroup (user_id) {
@@ -47,20 +43,12 @@ export default class ApiService {
         let paramUrl = Object.keys(param).map(function(key) {
             return key + '=' + param[key];
         }).join('&');
-
-
-
+        
         let url = 'https://api.vk.com/method/groups.get?'+paramUrl+'&callback=JSON_CALLBACK';
         return this._$http.jsonp(url).then(function(data){
             return data.data.response;
-
-
         }, function(response){
-
         });
     }
-
-
     
-
 }
